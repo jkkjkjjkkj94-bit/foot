@@ -5,9 +5,13 @@ skill:`<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 1.5 4.2L18 9l-
 potion:`<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 3h6M10 3v4l-4.5 8a4 4 0 0 0 3.5 6h6a4 4 0 0 0 3.5-6L14 7V3"/><path d="M8 14h8"/></svg>`,
 escape:`<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 4H5v16h5M14 8l4 4-4 4M8 12h10"/></svg>`};
 function actionButton({kind='normal',icon='attack',title,sub,onClick}){return `<button class="combat-action-btn ${kind}" onclick="${onClick}"><span class="combat-action-icon">${icons[icon]}</span><span class="combat-action-copy"><b>${title}</b><small>${sub||''}</small></span></button>`}
-function monsterVisualPro(){let custom=window.CEO&&window.CEO.getMonsterImage?window.CEO.getMonsterImage(enemy.name):'';if(custom)return `<img src="${custom}" alt="${enemy.name}">`;if(enemy.name==='Slime Sombrio')return `<img src="slime-sombrio.png" alt="Slime Sombrio">`;return `<div class="combat-monster-fallback">${enemy.icon||'👹'}</div>`}
+function monsterVisualPro(){const custom=window.CEO&&window.CEO.getMonsterImage?window.CEO.getMonsterImage(enemy.name):'';if(custom)return `<img src="${custom}" alt="${enemy.name}">`;if(enemy.name==='Slime Sombrio')return `<img src="slime-sombrio.png" alt="Slime Sombrio">`;return `<div class="combat-monster-fallback">${enemy.icon||'👹'}</div>`}
+function playerVisual(){const c=window.ELDORIA_CHARACTERS&&window.ELDORIA_CHARACTERS.selected?window.ELDORIA_CHARACTERS.selected():null;if(c?.image)return `<img src="${c.image}" alt="${c.name}">`;return CLASSES[S.className]?.icon||'🧙'}
+function playerName(){const c=window.ELDORIA_CHARACTERS&&window.ELDORIA_CHARACTERS.selected?window.ELDORIA_CHARACTERS.selected():null;return c?.name||S.name}
 window.battle=function(){
-  const skills=skillsForPlayer();
+  if(!enemy){enemy=makeEnemy()}
+  const classSkills=ELDORIA_SKILLS[S.className]||[];
+  const skills=classSkills.filter(x=>S.level>=x[1]);
   const enemyHp=Math.max(0,enemy.hp/enemy.maxHp*100);
   const playerHp=Math.max(0,S.hp/S.maxHp*100);
   const mana=Math.max(0,S.mana/S.maxMana*100);
@@ -21,7 +25,7 @@ window.battle=function(){
       <div class="combat-monster-frame">${monsterVisualPro()}<div class="combat-monster-badge"><b>${enemy.name}</b><span>Nível ${enemy.level}</span></div></div>
     </section>
     <aside class="combat-player-hud">
-      <div class="combat-player-head"><div class="combat-avatar">${CLASSES[S.className].icon}</div><div><b>${S.name}</b><small>${S.className} · Nível ${S.level}</small></div></div>
+      <div class="combat-player-head"><div class="combat-avatar">${playerVisual()}</div><div><b>${playerName()}</b><small>${S.className} · Nível ${S.level}</small></div></div>
       <div class="combat-stat-block"><div class="combat-stat-label"><span>Vida</span><b>${S.hp}/${S.maxHp}</b></div><div class="combat-meter hp"><i style="width:${playerHp}%"></i><span>${Math.round(playerHp)}%</span></div></div>
       <div class="combat-stat-block"><div class="combat-stat-label"><span>Mana</span><b>${S.mana}/${S.maxMana}</b></div><div class="combat-meter mana"><i style="width:${mana}%"></i><span>${Math.round(mana)}%</span></div></div>
       <div class="combat-numbers"><div class="combat-number"><small>Ataque</small><b>⚔ ${effectiveAtk()}</b></div><div class="combat-number"><small>Defesa</small><b>🛡 ${effectiveDef()}</b></div><div class="combat-number"><small>Ouro</small><b>🪙 ${S.gold}</b></div><div class="combat-number"><small>XP</small><b>${S.xp}/${xpNeed()}</b></div></div>
