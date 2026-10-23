@@ -1,7 +1,7 @@
 const $=x=>document.getElementById(x),rnd=(a,b)=>Math.floor(Math.random()*(b-a+1))+a;
 const CLASSES={Cavaleiro:{icon:'⚔️',hp:160,mana:45,atk:18,def:14,skill:'Golpe do Guardião'},Mago:{icon:'🔮',hp:95,mana:150,atk:27,def:6,skill:'Explosão Arcana'},Arqueiro:{icon:'🏹',hp:120,mana:85,atk:22,def:9,skill:'Chuva de Flechas'}};
 const ZONES=[
-{n:'Capital de Eldoria',lv:1,icon:'🛡️',desc:'Coração do reino e ponto seguro dos aventureiros.',x:18,y:29},
+{n:'Capital de Eldoria',lv:1,icon:'🛡️',desc:'Coração do reino e ponto seguro dos aventureiros.',x:20,y:25},
 {n:'Floresta de Lumir',lv:3,icon:'🌿',desc:'Floresta ancestral repleta de criaturas e segredos.',x:37,y:38},
 {n:'Montanhas de Névora',lv:10,icon:'❄️',desc:'Picos congelados onde monstros resistentes habitam.',x:45,y:14},
 {n:'Ruínas Ancestrais',lv:12,icon:'🔮',desc:'Ruínas antigas cercadas por magia esquecida.',x:10,y:64},
