@@ -5,7 +5,7 @@ skill:`<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 1.5 4.2L18 9l-
 potion:`<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 3h6M10 3v4l-4.5 8a4 4 0 0 0 3.5 6h6a4 4 0 0 0 3.5-6L14 7V3"/><path d="M8 14h8"/></svg>`,
 escape:`<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 4H5v16h5M14 8l4 4-4 4M8 12h10"/></svg>`};
 function actionButton({kind='normal',icon='attack',title,sub,onClick}){return `<button class="combat-action-btn ${kind}" onclick="${onClick}"><span class="combat-action-icon">${icons[icon]}</span><span class="combat-action-copy"><b>${title}</b><small>${sub||''}</small></span></button>`}
-function monsterVisualPro(){if(enemy.name==='Slime Sombrio')return `<img src="slime-sombrio.png" alt="Slime Sombrio">`;return `<div class="combat-monster-fallback">${enemy.icon||'👹'}</div>`}
+function monsterVisualPro(){let custom=window.CEO&&window.CEO.getMonsterImage?window.CEO.getMonsterImage(enemy.name):'';if(custom)return `<img src="${custom}" alt="${enemy.name}">`;if(enemy.name==='Slime Sombrio')return `<img src="slime-sombrio.png" alt="Slime Sombrio">`;return `<div class="combat-monster-fallback">${enemy.icon||'👹'}</div>`}
 window.battle=function(){
   const skills=skillsForPlayer();
   const enemyHp=Math.max(0,enemy.hp/enemy.maxHp*100);
