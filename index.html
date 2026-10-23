@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#08111f" />
+  <title>Foot Manager</title>
+  <style>
+    *{box-sizing:border-box}body{margin:0;font-family:Inter,system-ui,Arial,sans-serif;background:#08111f;color:#fff;min-height:100vh}.app{display:grid;grid-template-columns:250px 1fr;min-height:100vh}aside{background:#0c1728;border-right:1px solid #203047;padding:28px 18px}.brand{font-size:22px;font-weight:900;margin:0 10px 30px}.brand span{color:#4ade80}.menu{display:grid;gap:7px}.menu button{border:0;background:transparent;color:#aebbd0;text-align:left;padding:12px 14px;border-radius:10px;font-weight:700;cursor:pointer}.menu button:hover,.menu .active{background:#17263a;color:#fff}main{padding:34px}.top{display:flex;justify-content:space-between;align-items:center;margin-bottom:28px}.top h1{margin:0;font-size:28px}.season{color:#9fb0c7}.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.card{background:#101e31;border:1px solid #21334b;border-radius:16px;padding:20px}.label{color:#8ea1ba;font-size:13px}.value{font-size:28px;font-weight:900;margin-top:8px}.hero{margin-top:16px;display:grid;grid-template-columns:1.4fr 1fr;gap:16px}.next{padding:28px}.match{display:flex;align-items:center;justify-content:space-between;margin:28px 0;font-size:20px;font-weight:800}.vs{color:#71839b}.advance{width:100%;padding:15px;border:0;border-radius:11px;background:#22c55e;color:#04120a;font-size:15px;font-weight:900;cursor:pointer}.advance:hover{filter:brightness(1.08)}.news{display:grid;gap:12px;margin-top:18px}.news div{padding:13px;background:#0c1828;border-radius:10px;color:#c8d3e1;font-size:14px}@media(max-width:900px){.app{grid-template-columns:1fr}aside{display:none}.grid{grid-template-columns:1fr 1fr}.hero{grid-template-columns:1fr}}@media(max-width:520px){main{padding:20px}.grid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+<div class="app">
+  <aside><div class="brand">FOOT <span>MANAGER</span></div><div class="menu"><button class="active">Início</button><button>Elenco</button><button>Escalação</button><button>Táticas</button><button>Calendário</button><button>Competições</button><button>Transferências</button><button>Finanças</button><button>Treinamento</button><button>Base</button><button>Estádio</button><button>Histórico</button></div></aside>
+  <main>
+    <div class="top"><div><h1>Painel do Treinador</h1><div class="season">Temporada 2026</div></div><strong>Foot Manager</strong></div>
+    <section class="grid"><div class="card"><div class="label">POSIÇÃO</div><div class="value">1º</div></div><div class="card"><div class="label">PONTOS</div><div class="value">0</div></div><div class="card"><div class="label">SALDO</div><div class="value">R$ 25 mi</div></div><div class="card"><div class="label">CONFIANÇA</div><div class="value">80%</div></div></section>
+    <section class="hero"><div class="card next"><div class="label">PRÓXIMA PARTIDA</div><div class="match"><span>Seu Clube</span><span class="vs">VS</span><span>Adversário</span></div><button class="advance" onclick="advance()">PRÓXIMA RODADA</button></div><div class="card"><div class="label">CENTRAL DE NOTÍCIAS</div><div class="news" id="news"><div>Bem-vindo à sua nova carreira.</div><div>A diretoria espera uma boa temporada.</div><div>Mercado de transferências está aberto.</div></div></div></section>
+  </main>
+</div>
+<script>
+function advance(){const n=document.getElementById('news');const d=document.createElement('div');const a=Math.floor(Math.random()*4),b=Math.floor(Math.random()*4);d.textContent=`Fim de jogo: Seu Clube ${a} x ${b} Adversário`;n.prepend(d)}
+</script>
+</body>
+</html>
