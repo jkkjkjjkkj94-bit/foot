@@ -1,5 +1,6 @@
 (()=>{
 if(!document.querySelector('link[data-eldoria-ui-upgrade]')){const l=document.createElement('link');l.rel='stylesheet';l.href='eldoria-ui-upgrade.css?v=20261024-2';l.dataset.eldoriaUiUpgrade='1';document.head.appendChild(l)}
+if(!document.querySelector('link[data-eldoria-black-gold]')){const g=document.createElement('link');g.rel='stylesheet';g.href='eldoria-black-gold.css?v=20261024-1';g.dataset.eldoriaBlackGold='1';document.head.appendChild(g)}
 const q=(s,r=document)=>r.querySelector(s),qa=(s,r=document)=>[...r.querySelectorAll(s)];
 const esc=s=>String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
 
