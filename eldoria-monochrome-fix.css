@@ -1,0 +1,87 @@
+/* Eldoria — correção monocromática final: remove dourado residual sem alterar layout */
+:root{
+  --gold:#bdbdbd!important;
+  --eld-gold:#bdbdbd!important;
+  --eld-gold2:#e2e2e2!important;
+  --eld-gold3:#777!important;
+  --eld-yellow:#d5d5d5!important;
+  --eld-orange:#969696!important;
+  --hc-gold:#c7c7c7!important;
+  --hc-gold2:#eeeeee!important;
+  --hc-orange:#9d9d9d!important;
+  --hc-red:#666!important;
+  --hc-red2:#999!important;
+  --ui-gold:#c8c8c8!important;
+  --ui-orange:#929292!important;
+  --ui-blue:#aaa!important;
+  --ui-cyan:#ddd!important;
+}
+
+html,body,.site{background-color:#050505!important}
+body:before,body:after{filter:grayscale(1)!important}
+
+/* Portal / banner */
+.banner{filter:grayscale(1)!important}
+.hc-promo{filter:grayscale(1)!important}
+.hc-hero-art img{filter:grayscale(1) drop-shadow(0 28px 36px rgba(0,0,0,.78))!important}
+.hc-brand-mark,.hc-rune{color:#d6d6d6!important;border-color:#606060!important;background:radial-gradient(circle,#353535,#0a0a0a 72%)!important}
+.hc-brand-copy small,.hc-kicker,.hc-logo-text span,.hc-promo-copy small{color:#9c9c9c!important}
+.hc-logo-text h1,.hc-promo-copy h2{color:#ededed!important}
+.hc-online b,.hc-event b,.hc-table tr:first-child td{color:#d9d9d9!important}
+.hc-server i{background:#bcbcbc!important;box-shadow:0 0 10px rgba(255,255,255,.25)!important}
+.hc-nav button:hover,.hc-nav button.is-current{color:#fff!important;background:linear-gradient(180deg,#343434,#181818)!important;box-shadow:inset 0 -2px #aaa!important}
+.hc-play{background:linear-gradient(180deg,#ededed,#bcbcbc 58%,#7d7d7d)!important;border-color:#e5e5e5!important;color:#080808!important;box-shadow:0 0 0 2px #151515,0 10px 24px rgba(0,0,0,.4),inset 0 1px rgba(255,255,255,.55)!important}
+.hc-secondary{background:linear-gradient(180deg,#242424,#0d0d0d)!important;border-color:#4b4b4b!important;color:#dcdcdc!important}
+
+/* Títulos e destaques */
+.titlebar h1{background:linear-gradient(90deg,#fff,#cecece 62%,#888)!important;-webkit-background-clip:text!important;background-clip:text!important;color:transparent!important}
+.titlebar h1:after{background:linear-gradient(90deg,#555,#aaa,#e2e2e2)!important;box-shadow:0 0 12px rgba(255,255,255,.1)!important}
+.panelHead:before{background:linear-gradient(#6f6f6f,#d0d0d0)!important}
+
+/* Botões que antes eram dourados */
+.btn.gold,.training-card button,.shopItem>button,.ceo-btn.primary{
+  background:linear-gradient(180deg,#d2d2d2,#888)!important;
+  border-color:#e7e7e7!important;
+  color:#090909!important;
+  box-shadow:0 8px 20px rgba(255,255,255,.05)!important;
+}
+.btn.gold:hover,.training-card button:not(:disabled):hover,.shopItem>button:hover,.ceo-btn.primary:hover{
+  background:linear-gradient(180deg,#e1e1e1,#9d9d9d)!important;
+  border-color:#fff!important;
+}
+
+/* XP, recompensas e valores */
+.bar i,.profile-xp .bar i,.hub-mission-progress i,.combat-meter.mana>i{background:linear-gradient(90deg,#707070,#cecece)!important;box-shadow:none!important}
+.profile-xp-head span:last-child,.training-points b,.inventory-price,.shopHeader>b,.rewardGrid b,.victory h1,.hub-reward,.ability-card em,.profile-abilities em,.combat-action-cost,.combat-action-badge{color:#d2d2d2!important}
+.training-points{background:linear-gradient(145deg,#252525,#111)!important;border-color:#484848!important}
+
+/* Cards e hub */
+.profile-action:before,.profile-action:nth-child(3n+2):before,.profile-action:nth-child(3n):before,.hub-card:before,.hub-card.gold:before,.hub-card.orange:before{background:#9e9e9e!important}
+.hub-label,.combat-section-kicker{color:#999!important}
+.hub-card .hub-meta span,.tag{background:#171717!important;border-color:#3d3d3d!important;color:#c7c7c7!important}
+.hub-objective{background:linear-gradient(90deg,rgba(255,255,255,.04),rgba(255,255,255,.012))!important;box-shadow:inset 0 0 0 1px rgba(255,255,255,.07)!important}
+.hub-region-icon{background:radial-gradient(circle at 35% 25%,#333,#111 70%)!important;box-shadow:inset 0 0 0 1px rgba(255,255,255,.12),0 8px 20px #0006!important}
+
+/* Missões, mapa e batalha */
+.quest,.item,.combat-enemy-hud,.combat-player-hud,.combat-actions-pro,.combat-log-pro{background:linear-gradient(180deg,#191919,#080808)!important;border-color:#343434!important}
+.quest:hover,.item:hover{border-color:#666!important}
+.missionThumb{filter:grayscale(1)!important;border-color:#444!important}
+.worldmap{filter:grayscale(1)!important;border-color:#414141!important;box-shadow:0 18px 45px #0009,inset 0 0 50px rgba(255,255,255,.03)!important}
+.mapSpot{background:#181818!important;border-color:#737373!important;color:#e4e4e4!important}
+.mapSpot.is-current,.mapSpot.boss-ready{border-color:#d5d5d5!important;box-shadow:0 0 0 3px rgba(255,255,255,.07),0 0 22px rgba(255,255,255,.08)!important}
+.combat-enemy-hud,.combat-player-hud{border-top-color:#666!important}
+.combat-stage-pro{background:radial-gradient(circle at 50% 38%,#303030 0,#151515 42%,#070707 78%)!important;border-color:#444!important}
+.combat-monster-frame{background:linear-gradient(135deg,#4c4c4c,#101010 56%,#858585)!important}
+.combat-action-btn.art{background:linear-gradient(145deg,#181818,#090909)!important;border-color:#3f3f3f!important}
+.combat-action-btn.art:hover:not(:disabled){border-color:#bdbdbd!important;box-shadow:0 10px 24px #0009,0 0 0 1px rgba(255,255,255,.07)!important}
+
+/* Inventário / loja / raridades: tudo monocromático */
+.rarity-comum{--rarity:#707070!important}.rarity-raro{--rarity:#929292!important}.rarity-epico{--rarity:#b0b0b0!important}.rarity-lendario{--rarity:#d8d8d8!important}
+.lootCard.rarity-raro,.shopItem.rarity-raro,.lootCard.rarity-epico,.shopItem.rarity-epico,.lootCard.rarity-lendario,.shopItem.rarity-lendario{border-color:#444!important}
+.shopItem>small,.character-card-badge{background:#171717!important;border-color:#3c3c3c!important;color:#bdbdbd!important}
+
+/* CEO */
+.ceo-tab.active,.ceo-tab:hover{background:linear-gradient(135deg,#333,#171717)!important;color:#eee!important;border-color:#666!important}
+
+/* neutraliza brilhos coloridos herdados */
+.panel:hover,.card:hover,.training-card:hover,.inventory-item:hover,.inventory-card:hover,.profile-action:hover,.shopItem:hover{border-color:#5f5f5f!important;box-shadow:0 18px 38px rgba(0,0,0,.4),0 0 0 1px rgba(255,255,255,.025)!important}
