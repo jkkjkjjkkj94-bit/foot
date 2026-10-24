@@ -1,0 +1,11 @@
+/* Fotos reais dos itens no inventário Mythic */
+.mx-slot{overflow:hidden}
+.mx-item-visual{width:100%;height:100%;display:grid;place-items:center;overflow:hidden;padding:10%;pointer-events:none}
+.mx-item-visual img{width:100%;height:100%;display:block;object-fit:contain;filter:drop-shadow(0 8px 10px rgba(0,0,0,.38));transform:scale(.92);transition:transform .16s ease,filter .16s ease}
+.mx-slot:hover .mx-item-visual img,.mx-slot.selected .mx-item-visual img{transform:scale(1);filter:drop-shadow(0 10px 14px rgba(0,0,0,.46))}
+.mx-item-fallback{width:100%;height:100%;place-items:center;font-size:24px;line-height:1}
+.mx-detail-art{height:190px;overflow:hidden;padding:12px;background:radial-gradient(circle at center,rgba(149,136,255,.16),rgba(8,10,22,.32) 58%,transparent 72%)}
+.mx-detail-art .mx-item-visual.is-large{width:100%;height:100%;padding:0}
+.mx-detail-art .mx-item-visual.is-large img{width:100%;height:100%;max-width:220px;max-height:180px;margin:auto;object-fit:contain;transform:none;filter:drop-shadow(0 18px 22px rgba(0,0,0,.52))}
+.mx-detail-art .mx-item-fallback{font-size:72px}
+@media(max-width:760px){.mx-item-visual{padding:8%}.mx-detail-art{height:170px}.mx-detail-art .mx-item-visual.is-large img{max-height:155px}}
