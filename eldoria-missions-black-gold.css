@@ -1,0 +1,52 @@
+/* Missões — correção final da paleta preta e dourada */
+body[data-screen="missoes"] .panel,
+body[data-screen="missoes"] .quest{
+  background:linear-gradient(145deg,#151515,#090909)!important;
+  border-color:rgba(212,175,55,.22)!important;
+  box-shadow:0 14px 30px rgba(0,0,0,.34),inset 0 1px rgba(255,255,255,.018)!important;
+}
+body[data-screen="missoes"] .panelHead{
+  background:linear-gradient(90deg,#181818,#0d0d0d)!important;
+  border-bottom-color:#332a18!important;
+  color:#f2e4b4!important;
+}
+body[data-screen="missoes"] .panelHead:before{background:linear-gradient(#d4af37,#f0d77a)!important}
+body[data-screen="missoes"] .quest{color:#f5e9c7!important;transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease!important}
+body[data-screen="missoes"] .quest:hover{
+  background:linear-gradient(145deg,#1b1913,#0d0c09)!important;
+  border-color:#8e7229!important;
+  box-shadow:0 16px 32px rgba(0,0,0,.4),0 0 0 1px rgba(212,175,55,.07)!important;
+}
+body[data-screen="missoes"] .quest .muted{color:#b5a77e!important}
+body[data-screen="missoes"] .quest b{color:#f7edcf!important}
+body[data-screen="missoes"] .quest .tag,
+body[data-screen="missoes"] .tag{
+  background:#17140d!important;
+  border-color:#5a491f!important;
+  color:#e4d198!important;
+}
+body[data-screen="missoes"] .missionThumb{
+  border-color:#5e4b20!important;
+  background:#090909!important;
+  box-shadow:0 10px 24px rgba(0,0,0,.45),inset 0 0 0 1px rgba(212,175,55,.08)!important;
+}
+body[data-screen="missoes"] .bar{background:#080808!important;border-color:#302818!important}
+body[data-screen="missoes"] .bar i{background:linear-gradient(90deg,#9b741f,#e1bd55)!important;box-shadow:0 0 12px rgba(212,175,55,.18)!important}
+body[data-screen="missoes"] #missionTimer{color:#f0d77a!important}
+body[data-screen="missoes"] .btn:not(.red){background:linear-gradient(180deg,#1c1b18,#11100e)!important;border-color:#59481e!important;color:#f5e9c4!important}
+body[data-screen="missoes"] .btn:not(.red):hover{background:linear-gradient(180deg,#28241a,#17140e)!important;border-color:#a2832d!important}
+body[data-screen="missoes"] .btn.gold{background:linear-gradient(135deg,#a87e24,#e1bd55)!important;border-color:#f0d77a!important;color:#181208!important}
+body[data-screen="missoes"] .quest.is-locked{
+  background:linear-gradient(145deg,#10100f,#090909)!important;
+  border-color:#332d20!important;
+  opacity:.58!important;
+  filter:grayscale(.72) brightness(.78)!important;
+}
+body[data-screen="missoes"] .quest.is-complete{
+  background:linear-gradient(145deg,#201b0d,#0e0d09)!important;
+  border-color:#8e7229!important;
+  box-shadow:inset 3px 0 #d4af37,0 14px 30px rgba(0,0,0,.3)!important;
+}
+body[data-screen="missoes"] .titlebar{border-bottom-color:rgba(212,175,55,.2)!important}
+body[data-screen="missoes"] .titlebar h1{background:linear-gradient(90deg,#fffaf0,#f0dda0 65%,#d4af37)!important;-webkit-background-clip:text!important;background-clip:text!important;color:transparent!important}
+body[data-screen="missoes"] .titlebar h1:after{background:linear-gradient(90deg,#8c6a17,#d4af37,#f0d77a)!important;box-shadow:0 0 14px rgba(212,175,55,.24)!important}
