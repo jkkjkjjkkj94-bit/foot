@@ -16,7 +16,8 @@ const scripts=[
   'characters.js?v=20261023-4',
   'attribute-training.js?v=20261023-1',
   'eldoria-mythic.js?v=20261024-1',
-  'eldoria-mythic-runtime-fix.js?v=20261024-1'
+  'eldoria-mythic-runtime-fix.js?v=20261024-1',
+  'inventory-item-images.js?v=20261024-2'
 ];
 
 const nativeSet=Storage.prototype.setItem;
