@@ -1,0 +1,53 @@
+/* Legends of Eldoria — motion layer */
+@keyframes eldoriaPageIn{from{opacity:0;transform:translateY(10px) scale(.995)}to{opacity:1;transform:none}}
+@keyframes eldoriaGlow{0%,100%{box-shadow:0 0 0 1px rgba(42,142,255,.08),0 15px 35px rgba(0,9,28,.28)}50%{box-shadow:0 0 0 1px rgba(77,180,255,.18),0 18px 42px rgba(0,24,68,.4)}}
+@keyframes eldoriaBorderSweep{0%{transform:translateX(-120%)}60%,100%{transform:translateX(220%)}}
+@keyframes eldoriaPulse{0%,100%{opacity:.45;transform:scale(.96)}50%{opacity:.9;transform:scale(1.04)}}
+@keyframes eldoriaFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+@keyframes eldoriaEnergy{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+@keyframes eldoriaBarFlow{0%{background-position:0 0}100%{background-position:120px 0}}
+@keyframes eldoriaBannerShift{0%,100%{background-position:50% 48%}50%{background-position:50% 45%}}
+
+#main>*{animation:eldoriaPageIn .34s cubic-bezier(.2,.8,.2,1) both}
+#main>*:nth-child(2){animation-delay:.035s}#main>*:nth-child(3){animation-delay:.07s}#main>*:nth-child(4){animation-delay:.105s}
+
+body:after{content:"";position:fixed;inset:-20%;z-index:-1;pointer-events:none;background:radial-gradient(circle at 20% 30%,rgba(35,139,255,.10),transparent 22%),radial-gradient(circle at 78% 24%,rgba(255,134,28,.08),transparent 20%),radial-gradient(circle at 58% 82%,rgba(255,207,74,.045),transparent 23%);filter:blur(18px);animation:eldoriaEnergy 16s ease-in-out infinite;background-size:160% 160%}
+
+.banner{animation:eldoriaBannerShift 12s ease-in-out infinite}
+.banner:before{overflow:hidden}
+.banner .stat{transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease}.banner .stat:hover{transform:translateY(-2px);border-color:#4aa9ff!important;box-shadow:0 10px 26px rgba(0,27,72,.34),0 0 18px rgba(52,154,255,.12)!important}
+
+.titlebar h1{position:relative;background-size:180% auto!important;animation:eldoriaEnergy 7s ease infinite}
+.titlebar h1:after{content:"";display:block;width:42px;height:2px;margin-top:8px;border-radius:99px;background:linear-gradient(90deg,#2597ff,#57d5ff,#ff9828,#ffd456);box-shadow:0 0 14px rgba(58,156,255,.35)}
+
+.panel,.card,.hero,.profile-hero,.character-card,.character-profile-card,.character-profile-info,.training-card,.training-summary,.training-effects,.shopItem,.inventory-item,.inventory-card,.ceo-character-card,.combat-enemy-hud,.combat-player-hud,.combat-actions-pro,.combat-log-pro{position:relative;isolation:isolate;transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease}
+.panel:after,.card:after,.hero:after,.profile-hero:before,.training-card:after,.shopItem:after,.inventory-item:after,.combat-actions-pro:after{content:"";position:absolute;z-index:-1;left:-35%;top:-90%;width:32%;height:260%;pointer-events:none;background:linear-gradient(90deg,transparent,rgba(91,187,255,.075),rgba(255,185,54,.04),transparent);transform:rotate(18deg) translateX(-120%);transition:none}
+.panel:hover:after,.card:hover:after,.hero:hover:after,.training-card:hover:after,.shopItem:hover:after,.inventory-item:hover:after,.combat-actions-pro:hover:after{animation:eldoriaBorderSweep 1.3s ease}
+
+.panel:hover,.card:hover,.training-card:hover,.inventory-item:hover,.inventory-card:hover{transform:translateY(-2px);border-color:#337dbd!important;box-shadow:0 18px 38px rgba(0,15,44,.36),0 0 0 1px rgba(69,165,255,.05)!important}
+
+.profile-portrait,.character-profile-image,.combat-avatar{position:relative;transition:transform .25s ease,box-shadow .25s ease}.profile-portrait:hover,.character-profile-image:hover{transform:scale(1.025);box-shadow:0 0 0 3px rgba(31,135,235,.15),0 0 28px rgba(45,157,255,.18)!important}
+.profile-hero{animation:eldoriaGlow 5s ease-in-out infinite}
+.profile-action{overflow:hidden}.profile-action:after{content:"";position:absolute;width:70px;height:70px;right:-28px;top:-30px;border-radius:50%;background:radial-gradient(circle,rgba(59,159,255,.18),transparent 68%);animation:eldoriaPulse 4s ease-in-out infinite;pointer-events:none}.profile-action:nth-child(2n):after{background:radial-gradient(circle,rgba(255,144,31,.15),transparent 68%);animation-delay:-1.4s}
+
+.nav button{overflow:hidden}.nav button:before{transition:transform .18s ease}.nav button:hover:before{transform:translateX(2px)}
+.nav button:first-child{background-size:180% 180%!important;animation:eldoriaEnergy 7s ease infinite}
+
+.btn,.profile-action,.training-card button,.shopItem button,.combat-action-btn{position:relative;overflow:hidden;will-change:transform}.btn:active,.profile-action:active,.training-card button:active,.shopItem button:active,.combat-action-btn:active{transform:translateY(1px) scale(.99)!important}
+.btn.gold{background-size:180% 180%!important;animation:eldoriaEnergy 5s ease infinite}
+
+.bar i,.combat-meter>i{position:relative;overflow:hidden;background-size:120px 100%!important}.bar i:after,.combat-meter>i:after{content:"";position:absolute;inset:0;background:linear-gradient(105deg,transparent 0 35%,rgba(255,255,255,.18) 48%,transparent 62%);background-size:120px 100%;animation:eldoriaBarFlow 2.2s linear infinite}
+
+.combat-stage-pro{overflow:hidden}.combat-stage-pro:after{content:"";position:absolute;inset:auto 12% -40% 12%;height:55%;border-radius:50%;pointer-events:none;background:radial-gradient(ellipse,rgba(36,139,255,.16),rgba(255,139,31,.035) 50%,transparent 72%);filter:blur(10px);animation:eldoriaPulse 5s ease-in-out infinite}
+.combat-monster-frame{animation:eldoriaFloat 4.2s ease-in-out infinite}.combat-monster-frame:hover{animation-play-state:paused;transform:scale(1.012)}
+.combat-action-btn.art{transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease}.combat-action-btn.art:hover:not(:disabled){transform:translateY(-3px) scale(1.012)!important}.combat-action-btn.art img{transition:transform .28s ease,filter .28s ease}.combat-action-btn.art:hover:not(:disabled) img{transform:scale(1.06)}
+.combat-action-btn.art.primary:hover:not(:disabled){box-shadow:0 12px 26px rgba(27,119,222,.35),0 0 18px rgba(46,158,255,.13)!important}.combat-action-btn.art.item:hover:not(:disabled){box-shadow:0 12px 26px rgba(32,161,191,.25)!important}.combat-action-btn.art.danger:hover:not(:disabled){box-shadow:0 12px 26px rgba(255,103,48,.21)!important}
+
+.shopItem img,.inventory-item img,.inventory-card img,.missionThumb{transition:transform .28s ease,filter .28s ease}.shopItem:hover img,.inventory-item:hover img,.inventory-card:hover img,.quest:hover .missionThumb{transform:scale(1.035);filter:brightness(1.05) saturate(1.06)}
+
+.worldmap{position:relative}.worldmap:after{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle at 50% 45%,transparent 45%,rgba(4,12,27,.28) 100%);box-shadow:inset 0 0 45px rgba(18,105,198,.12)}.mapSpot{transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease}.mapSpot:hover{transform:translate(-50%,-50%) scale(1.06)!important;box-shadow:0 8px 24px rgba(0,20,58,.42),0 0 18px rgba(44,148,255,.16)!important;border-color:#ffad38!important}
+
+.training-points{animation:eldoriaGlow 4.5s ease-in-out infinite}.ability-card:hover{transform:translateY(-2px);border-color:#408dd0!important}
+
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.001ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.001ms!important}}
+@media(max-width:700px){.banner{animation:none}.profile-hero{animation:none}.combat-monster-frame{animation:none}.panel:hover,.card:hover,.training-card:hover,.inventory-item:hover,.inventory-card:hover{transform:none}}
