@@ -3,6 +3,7 @@ if(!document.querySelector('link[data-eldoria-theme]')){const t=document.createE
 if(!document.querySelector('link[data-eldoria-palette]')){const p=document.createElement('link');p.rel='stylesheet';p.href='eldoria-palette.css?v=20261024-1';p.dataset.eldoriaPalette='1';document.head.appendChild(p)}
 if(!document.querySelector('link[data-eldoria-motion]')){const m=document.createElement('link');m.rel='stylesheet';m.href='eldoria-motion.css?v=20261024-1';m.dataset.eldoriaMotion='1';document.head.appendChild(m)}
 if(!document.querySelector('link[data-combat-actions-css]')){const l=document.createElement('link');l.rel='stylesheet';l.href='combat-actions.css?v=20261024-2';l.dataset.combatActionsCss='1';document.head.appendChild(l)}
+if(!document.querySelector('link[data-eldoria-missions-gold]')){const q=document.createElement('link');q.rel='stylesheet';q.href='eldoria-missions-black-gold.css?v=20261024-1';q.dataset.eldoriaMissionsGold='1';document.head.appendChild(q)}
 const icons={
 attack:`<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.5 4.5 19.5 9.5M5 19l5.8-5.8M9.5 4.5l10 10M4.5 9.5l5-5 10 10-5 5z"/></svg>`,
 skill:`<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 1.5 4.2L18 9l-4.5 1.8L12 15l-1.5-4.2L6 9l4.5-1.8L12 3Z"/><path d="m18.5 15 .8 2.2 2.2.8-2.2.8-.8 2.2-.8-2.2-2.2-.8 2.2-.8.8-2.2Z"/></svg>`,
