@@ -1,5 +1,6 @@
 (()=>{
 'use strict';
+if(!document.querySelector('link[data-inventory-item-images]')){const l=document.createElement('link');l.rel='stylesheet';l.href='inventory-item-images.css?v=20261024-1';l.dataset.inventoryItemImages='1';document.head.appendChild(l)}
 const esc=s=>String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
 const attr=s=>esc(s).replace(/`/g,'&#96;');
 const rarityClass=r=>'rarity-'+String(r||'Comum').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/\s+/g,'-');
