@@ -1,5 +1,6 @@
 (()=>{
 if(!document.querySelector('link[data-eldoria-theme]')){const t=document.createElement('link');t.rel='stylesheet';t.href='eldoria-theme.css?v=20261024-2';t.dataset.eldoriaTheme='1';document.head.appendChild(t)}
+if(!document.querySelector('link[data-eldoria-palette]')){const p=document.createElement('link');p.rel='stylesheet';p.href='eldoria-palette.css?v=20261024-1';p.dataset.eldoriaPalette='1';document.head.appendChild(p)}
 if(!document.querySelector('link[data-eldoria-motion]')){const m=document.createElement('link');m.rel='stylesheet';m.href='eldoria-motion.css?v=20261024-1';m.dataset.eldoriaMotion='1';document.head.appendChild(m)}
 if(!document.querySelector('link[data-combat-actions-css]')){const l=document.createElement('link');l.rel='stylesheet';l.href='combat-actions.css?v=20261024-2';l.dataset.combatActionsCss='1';document.head.appendChild(l)}
 const icons={
