@@ -26,11 +26,14 @@ let lastWrite=Promise.resolve();
 
 function rawSet(key,value){nativeSet.call(localStorage,key,value)}
 function rawRemove(key){nativeRemove.call(localStorage,key)}
+function scheduleInitialMigration(){
+  setTimeout(()=>window.GameDB?.syncLocal?.().catch(err=>console.error('[GameDB migration]',err)),0);
+}
 function cloudKey(promptIfMissing=true){
   let key=localStorage.getItem(CLOUD_KEY)||'';
   if(!key&&promptIfMissing){
     key=(prompt('Digite a chave de sincronização do Painel CEO:')||'').trim();
-    if(key)rawSet(CLOUD_KEY,key);
+    if(key){rawSet(CLOUD_KEY,key);scheduleInitialMigration()}
   }
   return key;
 }
@@ -94,7 +97,11 @@ window.GameDB={
   url:SUPABASE_URL,
   ready:null,
   get lastWrite(){return lastWrite},
-  configureKey(){const key=(prompt('Digite a nova chave de sincronização do Painel CEO:')||'').trim();if(key)rawSet(CLOUD_KEY,key);return !!key},
+  configureKey(){
+    const key=(prompt('Digite a nova chave de sincronização do Painel CEO:')||'').trim();
+    if(!key)return false;
+    rawSet(CLOUD_KEY,key);scheduleInitialMigration();return true;
+  },
   forgetKey(){rawRemove(CLOUD_KEY)},
   async put(type,key,payload){lastWrite=writeContent(type,key,payload,'upsert');return lastWrite},
   async remove(type,key){lastWrite=writeContent(type,key,null,'delete');return lastWrite},
@@ -105,6 +112,7 @@ window.GameDB={
       try{tasks.push(writeContent(type,key,JSON.parse(raw),'upsert'))}catch{}
     }
     await Promise.all(tasks);
+    window.GameDBStatus={ok:true,at:Date.now(),migrated:true};
     return true;
   }
 };
