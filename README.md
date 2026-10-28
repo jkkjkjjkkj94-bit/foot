@@ -1,14 +1,16 @@
-# Legends of Eldoria — Estilo Clássico Restaurado
+# Legends of Eldoria — MMORPG 2D Clássico
 
-Esta edição volta à identidade visual das primeiras versões do jogo:
+Esta versão mantém a jogabilidade atual, mas aplica uma nova direção visual original inspirada na linguagem dos MMORPGs 2D clássicos:
 
-- pixel art 2D clássica;
-- personagem procedural em camadas 32x32;
-- sem personagem semi-realista;
-- sem cenário hiper-realista/4K;
-- terreno e objetos desenhados por tiles;
-- NPCs e monstros no estilo original;
-- movimentação/correções mais recentes preservadas;
-- combate, crafting, construção, inventário e demais sistemas mantidos.
+- visão top-down;
+- tiles 32x32;
+- cores mais saturadas;
+- água azul mais forte;
+- vegetação mais marcada;
+- pixel art sem suavização;
+- nomes e barras mais legíveis sobre entidades;
+- destaque vermelho para alvo;
+- interface quadrada, escura e old-school;
+- personagem clássico, sem visual realista.
 
-Abra `index.html` no navegador para testar.
+A imagem de referência foi usada apenas como direção visual. Nenhum sprite ou asset do jogo mostrado na referência foi copiado.
