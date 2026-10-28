@@ -1,9 +1,8 @@
 'use strict';
 (async()=>{
-  const r=await fetch('js/game.gz.b64');
-  if(!r.ok) throw new Error('Falha ao carregar o jogo');
-  const b64=(await r.text()).trim();
-  const bin=Uint8Array.from(atob(b64),c=>c.charCodeAt(0));
+  const parts=['js/gzparts/p01.txt','js/gzparts/p02.txt','js/gzparts/p03.txt','js/gzparts/p04.txt','js/gzparts/p05.txt'];
+  const chunks=await Promise.all(parts.map(async p=>{const r=await fetch(p); if(!r.ok) throw new Error('Falha ao carregar '+p); return (await r.text()).trim();}));
+  const bin=Uint8Array.from(atob(chunks.join('')),c=>c.charCodeAt(0));
   const stream=new Blob([bin]).stream().pipeThrough(new DecompressionStream('gzip'));
   const source=await new Response(stream).text();
   (0,eval)(source);
