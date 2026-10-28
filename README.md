@@ -1,21 +1,14 @@
-# Foot Manager
+# Legends of Eldoria — Estilo Clássico Restaurado
 
-Jogo web de gerenciamento de futebol com identidade própria, inspirado no gênero clássico de football manager.
+Esta edição volta à identidade visual das primeiras versões do jogo:
 
-## Primeira versão
+- pixel art 2D clássica;
+- personagem procedural em camadas 32x32;
+- sem personagem semi-realista;
+- sem cenário hiper-realista/4K;
+- terreno e objetos desenhados por tiles;
+- NPCs e monstros no estilo original;
+- movimentação/correções mais recentes preservadas;
+- combate, crafting, construção, inventário e demais sistemas mantidos.
 
-- Dashboard do treinador
-- Próxima partida
-- Simulação básica de resultado
-- Central de notícias
-- Estrutura inicial para elenco, escalação, táticas, competições, transferências, finanças, base e estádio
-
-## Próximas etapas
-
-- Criação de carreira e escolha de clube
-- Banco de clubes e jogadores
-- Campeonato e classificação
-- Motor de partidas
-- Mercado de transferências
-- Persistência de carreira com Supabase
-- GitHub Pages
+Abra `index.html` no navegador para testar.
